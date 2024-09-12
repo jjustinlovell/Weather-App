@@ -9,3 +9,5 @@ export async function getWeatherByCity(city) {
   const data = await res.json();
   return data;
 }
+
+

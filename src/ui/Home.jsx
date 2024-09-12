@@ -7,21 +7,21 @@ export default function Home() {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
-  const handleClick = async () => {
-    try {
-      const weatherData = await getWeatherByCity("Jakarta");
-      setWeatherData(weatherData);
-      console.log(weatherData);
-      console.log(weatherData.weather[0].main);
-    } catch (err) {
-      setWeatherData(null);
-    }
-  };
+  // const handleClick = async () => {
+  //   try {
+  //     const weatherData = await getWeatherByCity("Jakarta");
+  //     setWeatherData(weatherData);
+  //     console.log(weatherData);
+  //     console.log(weatherData.weather[0].main);
+  //   } catch (err) {
+  //     setWeatherData(null);
+  //   }
+  // };
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!city) return;
-    navigate(`/weather/:${city}`);
+    navigate(`/weather/ ${city}`);
   }
 
   return (
