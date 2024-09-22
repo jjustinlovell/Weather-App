@@ -5,6 +5,7 @@ import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import CompressIcon from "@mui/icons-material/Compress";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import LinkButton from "../ui/LinkButton";
 
 function SearchedWeather() {
   const weather = useLoaderData();
@@ -27,6 +28,7 @@ function SearchedWeather() {
 
   return (
     <div className="flex items-center justify-center h-screen">
+      <LinkButton to='/'>&larr; Back</LinkButton>
       <div className="relative w-1/3 py-10 text-center rounded-lg h-82 sm:w-4/6 md:h-100 lg:w-96 space-y-7">
         <div className="absolute right-0 bg-blue-200 rounded-full opacity-70 bottom-8 w-96 h-72 mix-blend-multiply filter blur-xl animate-blob"></div>
         <div className="absolute bg-purple-300 rounded-full opacity-70 top-16 w-72 h-72 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
