@@ -7,6 +7,10 @@ export async function getWeatherByCity(city) {
   if (!res.ok) throw new Error("Fetching Data Failed !!");
 
   const data = await res.json();
+  console.log(res);
+  console.log(res.status);
+  
+
   return data;
 }
 

@@ -6,27 +6,40 @@ import Loader from "./Loader";
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // const handleClick = async () => {
-  //   try {
-  //     const weatherData = await getWeatherByCity("Jakarta");
-  //     setWeatherData(weatherData);
-  //     console.log(weatherData);
-  //     console.log(weatherData.weather[0].main);
-  //   } catch (err) {
-  //     setWeatherData(null);
-  //   }
-  // };
+  function handleOnChangeCity(e) {
+    setCity(e.target.value);
+    if (error) setError("");
+  }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!city) return;
-    navigate(`/weather/ ${city}`);
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const weather = await getWeatherByCity(city);
+      if (!weather) {
+        throw new Error("City Not Found");
+      }
+      console.log(weather);
+      navigate(`/weather/ ${city}`);
+    } catch (err) {
+      console.log(err);
+      setError("City Not Found, Please enter a valid city");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <div className="px-4 my-24 space-y-5 text-center sm:my-28">
+      {loading && <Loader />}
       <h1>Image</h1>
       <h2 className="mx-auto text-sm tracking-wide sm:text-base sm:max-w-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente
@@ -40,10 +53,15 @@ export default function Home() {
           type="text"
           placeholder="Enter City Name..."
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={handleOnChangeCity}
         />
       </form>
-      {city !== "" && (
+      {error && (
+        <button className="px-5 py-2 font-bold text-white bg-red-600 rounded-md">
+          {error}
+        </button>
+      )}
+      {city !== "" && !error && (
         <div>
           <button>Click Enter to Search {city}</button>
         </div>
