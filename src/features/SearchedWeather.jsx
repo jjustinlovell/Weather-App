@@ -13,7 +13,7 @@ function SearchedWeather() {
 
   const city = weather.name;
   const status = weather.weather[0].description;
-  const degree = weather.main.temp;
+  const degree = Math.floor(weather.main.temp - 273.15);
   const humidity = weather.main.humidity;
   const pressure = weather.main.pressure;
   const iconName = weather.weather[0].icon;
@@ -28,7 +28,7 @@ function SearchedWeather() {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <LinkButton to='/'>&larr; Back</LinkButton>
+      {/* <LinkButton to='/'>&larr; Back</LinkButton> */}
       <div className="relative w-1/3 py-10 text-center rounded-lg h-82 sm:w-4/6 md:h-100 lg:w-96 space-y-7">
         <div className="absolute right-0 bg-blue-200 rounded-full opacity-70 bottom-8 w-96 h-72 mix-blend-multiply filter blur-xl animate-blob"></div>
         <div className="absolute bg-purple-300 rounded-full opacity-70 top-16 w-72 h-72 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
@@ -41,12 +41,12 @@ function SearchedWeather() {
         <button className="absolute top-0 px-3 text-white bg-green-400 rounded-md sm:text-3xl right-5">
           {country}
         </button>
-        <h1 className="text-3xl font-extrabold sm:text-8xl">{city}</h1>
+        <h1 className="text-3xl font-extrabold sm:text-6xl">{city}</h1>
         <h1>{status}</h1>
         <ul className="flex justify-center space-x-8">
           <li>
             <DeviceThermostatIcon />
-            {degree}
+            {degree}°C
           </li>
           <li>
             <WaterDropIcon />

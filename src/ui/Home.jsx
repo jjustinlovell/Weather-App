@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getWeatherByCity } from "../services/apiWeather";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
@@ -26,7 +27,6 @@ export default function Home() {
 
   return (
     <div className="px-4 my-24 space-y-5 text-center sm:my-28">
-
       <h1>Image</h1>
       <h2 className="mx-auto text-sm tracking-wide sm:text-base sm:max-w-lg">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente
