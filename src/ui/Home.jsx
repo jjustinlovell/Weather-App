@@ -38,15 +38,17 @@ export default function Home() {
   }
 
   return (
-    <div className="px-4 my-24 space-y-5 text-center sm:my-28">
+    <div className="px-4 my-24 space-y-5 text-center sm:my-48">
       {loading && <Loader />}
-      <h1>Image</h1>
-      <h2 className="mx-auto text-sm tracking-wide sm:text-base sm:max-w-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sapiente
-        doloremque quod? Natus architecto nam deserunt libero adipisci eligendi,
-        quam minus ab voluptate debitis cum, officia rerum quidem quisquam?
-        Facilis!
-      </h2>
+        <div className="absolute bg-blue-200 rounded-full pointer-events-none right-1/3 top-40 opacity-70 w-96 h-72 mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute bg-purple-300 rounded-full pointer-events-none left-[750px] opacity-70 top-32 w-72 h-72 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute rounded-full pointer-events-none top-[300px] opacity-70 bg-cyan-300 right-[800px] w-72 h-72 mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        <h2 className="mx-auto text-sm font-extrabold mt-[200px] tracking-wide sm:text-base sm:max-w-lg">
+          Simply enter any city name to receive the latest weather details,
+          including current temperature, conditions, humidity, and more. Stay
+          prepared with accurate, real-time updates for your location or
+          anywhere around the globe!
+        </h2>
       <form onSubmit={handleSubmit}>
         <input
           className="px-4 py-3 text-sm transition-all duration-300 bg-blue-200 w-80 placeholder-slate-500 rounded-xl sm:focus:w-96 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50"
