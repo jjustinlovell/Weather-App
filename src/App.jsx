@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
-import Weather from "./features/Weather";
 import SearchedWeather, {
   loader as searchedLoader,
 } from "./features/SearchedWeather";
@@ -16,10 +15,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         errorElement: <Error/>,
-      },
-      {
-        path: "/weather/all",
-        element: <Weather />,
       },
       {
         path: "/weather/:cityName",
