@@ -1,4 +1,4 @@
-const API_KEY = "269ed43e6835ec59d81518ab3b47bb3f";
+const API_KEY = process.env.API_KEY;
 
 export async function getWeatherByCity(city) {
   const res = await fetch(
