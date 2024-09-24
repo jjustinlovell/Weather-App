@@ -2,6 +2,8 @@
 
 A simple weather app that provides the user with an ability to search for the current weather of any city by just typing the name of a city. It retrieves data on the weather by connecting to the OpenWeatherMap API and displays the following information to the user: temperature, humidity, pressure, and condition.
 
+https://weather-app-jstn.vercel.app/
+
 ## Features
 
 - 🔍 Ability to search for weather information by city name.
