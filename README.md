@@ -11,10 +11,18 @@ A simple weather app that provides the user with an ability to search for the cu
 
 ## Technologies Used
 
-- React
-- React Router
-- OpenWeatherMap API
-- Tailwind CSS
-- Material-UI
-- ldrs
+- **ReactJS**
+- **React Router**
+- **OpenWeatherMap API**
+- **Tailwind CSS**
+- **Material-UI**
+- **ldrs**
+
+## Installation
+
+**Clone the repository**
+git clone https://github.com/jjustinlovell/weather-app.git
+- cd weather-app
+- npm i
+- npm run dev
 
