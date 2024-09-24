@@ -62,13 +62,13 @@ function SearchedWeather() {
           </li>
         </ul>
         <ul className="flex justify-center space-x-8">
-          <li>
+          <li className="font-bold text-red-500">
             <ArrowDropDownIcon />
-            {min}°C
+            {min}°C (min)
           </li>
-          <li>
+          <li className="font-bold text-green-500">
             <ArrowDropUpIcon />
-            {max}°C
+            {max}°C (max)
           </li>
         </ul>
       </div>
