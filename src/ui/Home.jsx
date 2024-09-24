@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getWeatherByCity } from "../services/apiWeather";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
@@ -36,6 +36,10 @@ export default function Home() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    document.title = `WeatherApp`
+  }, [])
 
   return (
     <div className="px-4 my-24 space-y-5 text-center sm:my-48">

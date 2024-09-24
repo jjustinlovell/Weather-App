@@ -6,6 +6,7 @@ import CompressIcon from "@mui/icons-material/Compress";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LinkButton from "../ui/LinkButton";
+import { useEffect } from "react";
 
 function SearchedWeather() {
   const weather = useLoaderData();
@@ -25,6 +26,10 @@ function SearchedWeather() {
   console.log(iconName);
 
   const geticonApi = `http://openweathermap.org/img/w/${iconName}.png`;
+
+  useEffect(() => {
+    document.title = `${city} ${degree}°C`
+  }, [city])
 
   return (
     <div className="flex items-center justify-center h-screen">
